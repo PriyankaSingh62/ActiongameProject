@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.score, .health {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 20;
+    border: 3px solid #fff;
+}
+
+.game-over h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #ff6b6b;
+}
+
+.game-over p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restartBtn:hover {
+    background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+    transform: scale(1.05);
+}
+
+#gameCanvas {
+    display: block;
+    background: linear-gradient(180deg, #001122 0%, #003366 50%, #004488 100%);
+    border-radius: 7px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.health.warning {
+    animation: pulse 1s infinite;
+    color: #ff6b6b;
+}
+
+.score.highlight {
+    animation: pulse 0.5s ease-in-out;
+}
